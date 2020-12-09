@@ -4,32 +4,6 @@ const menu = {
       mains: [],
       desserts: []
     },
-    get appetizer () {
-        return this._courses.appetizers;
-    },
-    set appetizer (appetizer) {
-   this._courses.appetizers = appetizer;
-    },
-    get mains () {
-        return this._courses.mains;
-    },
-    set mains (main) {
-   this._courses.mains = main;
-  
-    },
-    get desserts () {
-        return this._courses.desserts;
-    },
-    set desserts (dessert) {
-   this._courses.desserts = dessert;
-    },
-    get courses () {
-        return {
-          appetizers: this.appetizers,
-          mains: this.mains,
-          desserts: this.desserts
-        }
-    },
     addDishToCourse(courseName, dishName, dishPrice) {
         const dish = {
           name: dishName, 
@@ -53,6 +27,18 @@ const menu = {
     }
   
   }  
+  menu.addDishToCourse('appetizers', 'Caesar Salad', 4.25);
+  menu.addDishToCourse('appetizers', 'Jules Salad', 3.25);
+  menu.addDishToCourse('appetizers', 'Romain Salad', 2.25);
+  
+  menu.addDishToCourse('mains', 'Pasta', 5.25);
+  menu.addDishToCourse('mains', 'Rice', 6.25);
+  menu.addDishToCourse('mains', 'Hamburger', 7.25);
+  
+  menu.addDishToCourse('desserts', 'Apple', 1.25);
+  menu.addDishToCourse('desserts', 'Pear', 1.5);
+  menu.addDishToCourse('desserts', 'Peach', 1.75);
+
   
   let meal = menu.generateRandomMeal();
   console.log(meal);
